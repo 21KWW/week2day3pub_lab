@@ -16,6 +16,10 @@ class Pub:
             if drink.name == d:
                 return drink
         return None
-        
-    def customer_buys_drink():
-        pass
+
+    def customer_buys_drink(self, customer_name, drink_name):
+        customer = self.find_customer_by_name(customer_name)
+        drink = self.find_drink_by_name(drink_name)
+        self.cash += drink.price
+        customer.wallet -= drink.price
+
