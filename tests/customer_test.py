@@ -19,3 +19,6 @@ class TestCustomer(unittest.TestCase):
     def test_customer_has_age(self):
         self.assertEqual(29, self.customer1.age)
         self.assertEqual(34, self.customer2.age)
+
+    def test_customer_drunkennes(self):
+        self.assertEqual(0, self.customer1.drunkenness)
