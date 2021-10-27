@@ -80,8 +80,11 @@ class TestPub(unittest.TestCase):
         self.assertEqual(115, self.pub.cash)
         self.assertEqual(5, self.pub.customers[0].wallet)
 
-    # def test_pub_customer_buys_food_without_drink(self):
-    #     self.pub.customer_buys_food("Andrew", "Chips")
+    def test_pub_customer_buys_food_without_drink(self):
+        self.pub.customer_buys_food("Andrew", "Chips")
+        self.assertEqual(103, self.pub.cash)
+        self.assertEqual(17, self.pub.customers[0].wallet)
+        self.assertEqual(0, self.pub.customers[0].drunkenness)
 
     def test_pub_customer_buys_food_with_drink(self):
          self.pub.customer_buys_drink("Andrew", "Beer")
@@ -90,4 +93,3 @@ class TestPub(unittest.TestCase):
          self.assertEqual(12, self.pub.customers[0].wallet)
          self.assertEqual(4, self.pub.customers[0].drunkenness)
 
-         

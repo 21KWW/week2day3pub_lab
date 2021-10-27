@@ -41,4 +41,8 @@ class Pub:
         food = self.find_food_by_name(food_name)
         self.cash += food.price
         customer.wallet -= food.price
-        customer.drunkenness -= food.rejuvination
+        if customer.drunkenness >= food.rejuvination:
+            customer.drunkenness -= food.rejuvination
+        else:
+            customer.drunkenness = 0
+        
