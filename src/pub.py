@@ -33,6 +33,7 @@ class Pub:
             self.cash += drink.price
             customer.wallet -= drink.price
             customer.drunkenness += drink.alcohol_level
+            drink.stock -= 1
         else:
             print("You've had enough mate!")
 
@@ -45,4 +46,4 @@ class Pub:
             customer.drunkenness -= food.rejuvination
         else:
             customer.drunkenness = 0
-        
+

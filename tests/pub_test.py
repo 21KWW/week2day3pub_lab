@@ -61,6 +61,7 @@ class TestPub(unittest.TestCase):
         self.pub.customer_buys_drink("Andrew", "Beer")
         self.assertEqual(105, self.pub.cash)
         self.assertEqual(15, self.pub.customers[0].wallet)
+        self.assertEqual(39, self.pub.drinks[0].stock)
 
     def test_pub_under_age_cant_buy_drink(self):
         self.pub.customer_buys_drink("Charlie", "Beer")
@@ -92,4 +93,3 @@ class TestPub(unittest.TestCase):
          self.assertEqual(108, self.pub.cash)
          self.assertEqual(12, self.pub.customers[0].wallet)
          self.assertEqual(4, self.pub.customers[0].drunkenness)
-
