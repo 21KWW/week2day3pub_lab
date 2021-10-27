@@ -8,8 +8,8 @@ from src.food import Food
 
 class TestPub(unittest.TestCase):
     def setUp(self):
-        drink1 = Drink("Beer", 5, 5)
-        drink2 = Drink("Wine", 4, 11)
+        drink1 = Drink("Beer", 5, 5, 40)
+        drink2 = Drink("Wine", 4, 11, 10)
         drinks = [drink1, drink2]
 
         customer1 = Customer("Andrew", 20, 29)
