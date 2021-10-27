@@ -11,7 +11,7 @@ class TestPub(unittest.TestCase):
         drink2 = Drink("Wine", 4, 11)
         drinks = [drink1, drink2]
 
-        customer1 = Customer("Andrew", 10, 29)
+        customer1 = Customer("Andrew", 20, 29)
         customer2 = Customer("Betty", 8, 34)
         customer3 = Customer("Charlie", 30, 16)
         customers = [customer1, customer2, customer3]
@@ -40,7 +40,7 @@ class TestPub(unittest.TestCase):
         self.assertEqual("Betty", self.pub.customers[1].name)
 
     def test_pub_customer_has_wallet(self):
-        self.assertEqual(10, self.pub.customers[0].wallet)
+        self.assertEqual(20, self.pub.customers[0].wallet)
         self.assertEqual(8, self.pub.customers[1].wallet)
 
     def test_pub_find_customer_by_name(self):
@@ -52,7 +52,7 @@ class TestPub(unittest.TestCase):
     def test_pub_customer_can_buy_drink(self):
         self.pub.customer_buys_drink("Andrew", "Beer")
         self.assertEqual(105, self.pub.cash)
-        self.assertEqual(5, self.pub.customers[0].wallet)
+        self.assertEqual(15, self.pub.customers[0].wallet)
 
     def test_pub_under_age_cant_buy_drink(self):
         self.pub.customer_buys_drink("Charlie", "Beer")
@@ -62,3 +62,13 @@ class TestPub(unittest.TestCase):
     def test_pub_drunkenness_level(self):
         self.pub.customer_buys_drink("Andrew", "Beer")
         self.assertEqual(5, self.pub.customers[0].drunkenness)
+
+    def test_pub_too_drunk(self):
+        self.pub.customer_buys_drink("Andrew", "Beer")
+        self.pub.customer_buys_drink("Andrew", "Beer")
+        self.pub.customer_buys_drink("Andrew", "Beer")
+        self.pub.customer_buys_drink("Andrew", "Beer")
+        self.assertEqual(15, self.pub.customers[0].drunkenness)
+        self.assertEqual(115, self.pub.cash)
+        self.assertEqual(5, self.pub.customers[0].wallet)
+

@@ -22,9 +22,11 @@ class Pub:
         drink = self.find_drink_by_name(drink_name)
         if customer.age < 18:
             print("Too young to drink")
-        else:
+        elif customer.drunkenness < 15:
             self.cash += drink.price
             customer.wallet -= drink.price
             customer.drunkenness += drink.alcohol_level
-            
+        else:
+            print("You've had enough mate!")
+
 
