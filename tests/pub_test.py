@@ -13,7 +13,8 @@ class TestPub(unittest.TestCase):
 
         customer1 = Customer("Andrew", 10, 29)
         customer2 = Customer("Betty", 8, 34)
-        customers = [customer1, customer2]
+        customer3 = Customer("Charlie", 30, 16)
+        customers = [customer1, customer2, customer3]
 
         self.pub = Pub("The Prancing Pony", 100, drinks, customers)
 
@@ -53,3 +54,7 @@ class TestPub(unittest.TestCase):
         self.assertEqual(105, self.pub.cash)
         self.assertEqual(5, self.pub.customers[0].wallet)
 
+    def test_pub_under_age_cant_buy_drink(self):
+        self.pub.customer_buys_drink("Charlie", "Beer")
+        self.assertEqual(100, self.pub.cash)
+        self.assertEqual(30, self.pub.customers[2].wallet)

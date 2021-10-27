@@ -20,6 +20,9 @@ class Pub:
     def customer_buys_drink(self, customer_name, drink_name):
         customer = self.find_customer_by_name(customer_name)
         drink = self.find_drink_by_name(drink_name)
-        self.cash += drink.price
-        customer.wallet -= drink.price
+        if customer.age < 18:
+            return "Too young to drink"
+        else:
+            self.cash += drink.price
+            customer.wallet -= drink.price
 
