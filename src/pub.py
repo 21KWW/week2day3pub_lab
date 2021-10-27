@@ -1,9 +1,10 @@
 class Pub:
-    def __init__(self, init_name, init_cash, init_drinks, init_customers):
+    def __init__(self, init_name, init_cash, init_drinks, init_customers, init_foods):
         self.name = init_name
         self.cash = init_cash
         self.drinks = init_drinks
         self.customers = init_customers
+        self.foods = init_foods
 
     def find_customer_by_name(self, n):
         for customer in self.customers:
@@ -17,6 +18,13 @@ class Pub:
                 return drink
         return None
 
+    def find_food_by_name(self, f):
+        for food in self.foods:
+            if food.name == f:
+                return food
+        return None
+
+
     def customer_buys_drink(self, customer_name, drink_name):
         customer = self.find_customer_by_name(customer_name)
         drink = self.find_drink_by_name(drink_name)
@@ -29,4 +37,5 @@ class Pub:
         else:
             print("You've had enough mate!")
 
-
+    def customer_buys_food():
+        pass
