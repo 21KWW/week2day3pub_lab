@@ -3,13 +3,19 @@
 import unittest
 from src.pub import Pub
 from src.drinks import Drink
+from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     def setUp(self):
         drink1 = Drink("Beer", 5)
         drink2 = Drink("Wine", 4)
         drinks = [drink1, drink2]
-        self.pub = Pub("The Prancing Pony", 100, drinks)
+
+        customer1 = Customer("Andrew", 10)
+        customer2 = Customer("Betty", 8)
+        customers = [customer1, customer2]
+
+        self.pub = Pub("The Prancing Pony", 100, drinks, customers)
 
     def test_pub_has_name(self):
         self.assertEqual("The Prancing Pony", self.pub.name)
@@ -27,3 +33,11 @@ class TestPub(unittest.TestCase):
     def test_pub_drink_has_price(self):
         self.assertEqual(5, self.pub.drinks[0].price)
         self.assertEqual(4, self.pub.drinks[1].price)
+
+    def test_pub_customer_has_name(self):
+        self.assertEqual("Andrew", self.pub.customers[0].name)
+        self.assertEqual("Betty", self.pub.customers[1].name)
+
+    def test_pub_customer_has_wallet(self):
+        self.assertEqual(10, self.pub.customers[0].wallet)
+        self.assertEqual(8, self.pub.customers[1].wallet)
