@@ -83,6 +83,11 @@ class TestPub(unittest.TestCase):
     # def test_pub_customer_buys_food_without_drink(self):
     #     self.pub.customer_buys_food("Andrew", "Chips")
 
-    # def test_pub_customer_buys_food_with_drink(self):
-        # self.pub.customer_buys_drink("Andrew", "Beer")
-    #     self.pub.customer_buys_food("Andrew", "Chips")
+    def test_pub_customer_buys_food_with_drink(self):
+         self.pub.customer_buys_drink("Andrew", "Beer")
+         self.pub.customer_buys_food("Andrew", "Chips")
+         self.assertEqual(108, self.pub.cash)
+         self.assertEqual(12, self.pub.customers[0].wallet)
+         self.assertEqual(4, self.pub.customers[0].drunkenness)
+
+         

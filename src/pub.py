@@ -24,7 +24,6 @@ class Pub:
                 return food
         return None
 
-
     def customer_buys_drink(self, customer_name, drink_name):
         customer = self.find_customer_by_name(customer_name)
         drink = self.find_drink_by_name(drink_name)
@@ -37,5 +36,9 @@ class Pub:
         else:
             print("You've had enough mate!")
 
-    def customer_buys_food():
-        pass
+    def customer_buys_food(self, customer_name, food_name):
+        customer = self.find_customer_by_name(customer_name)
+        food = self.find_food_by_name(food_name)
+        self.cash += food.price
+        customer.wallet -= food.price
+        customer.drunkenness -= food.rejuvination
