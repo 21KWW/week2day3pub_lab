@@ -47,3 +47,6 @@ class Pub:
         else:
             customer.drunkenness = 0
 
+    def stock_value(self, drink_name):
+        drink = self.find_drink_by_name(drink_name)
+        return drink.price * drink.stock

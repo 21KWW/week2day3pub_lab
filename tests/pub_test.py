@@ -93,3 +93,6 @@ class TestPub(unittest.TestCase):
          self.assertEqual(108, self.pub.cash)
          self.assertEqual(12, self.pub.customers[0].wallet)
          self.assertEqual(4, self.pub.customers[0].drunkenness)
+
+    def test_pub_drink_stock_value(self):
+        self.assertEqual(200, self.pub.stock_value("Beer"))
