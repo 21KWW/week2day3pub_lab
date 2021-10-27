@@ -50,3 +50,6 @@ class TestPub(unittest.TestCase):
 
     def test_pub_find_customer_by_name(self):
         self.assertEqual(self.pub.customers[0], self.pub.find_customer_by_name("Andrew"))
+
+    def test_pub_find_drink_by_name(self):
+        self.assertEqual(self.pub.drinks[0], self.pub.find_drink_by_name("Beer"))

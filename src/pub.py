@@ -11,5 +11,11 @@ class Pub:
                 return customer
         return None
 
+    def find_drink_by_name(self, d):
+        for drink in self.drinks:
+            if drink.name == d:
+                return drink
+        return None
+        
     def customer_buys_drink():
         pass
