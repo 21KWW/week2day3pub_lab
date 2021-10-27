@@ -11,8 +11,8 @@ class TestPub(unittest.TestCase):
         drink2 = Drink("Wine", 4)
         drinks = [drink1, drink2]
 
-        customer1 = Customer("Andrew", 10)
-        customer2 = Customer("Betty", 8)
+        customer1 = Customer("Andrew", 10, 29)
+        customer2 = Customer("Betty", 8, 34)
         customers = [customer1, customer2]
 
         self.pub = Pub("The Prancing Pony", 100, drinks, customers)
