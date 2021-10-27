@@ -5,3 +5,11 @@ class Pub:
         self.drinks = init_drinks
         self.customers = init_customers
 
+    def find_customer_by_name(self, n):
+        for customer in self.customers:
+            if customer.name == n:
+                return customer
+        return None
+
+    def customer_buys_drink():
+        pass

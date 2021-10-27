@@ -41,3 +41,12 @@ class TestPub(unittest.TestCase):
     def test_pub_customer_has_wallet(self):
         self.assertEqual(10, self.pub.customers[0].wallet)
         self.assertEqual(8, self.pub.customers[1].wallet)
+
+    # def test_pub_customer_can_buy_drink(self):
+    #     pass
+    #     self.customer_buys_drink(self.pub.customers[0], self.pub.drinks[0])
+    #     self.assertEqual(105, self.pub.cash)
+    #     self.assertEqual(5, self.pub.customers[0].wallet)
+
+    def test_pub_find_customer_by_name(self):
+        self.assertEqual(self.pub.customers[0], self.pub.find_customer_by_name("Andrew"))
