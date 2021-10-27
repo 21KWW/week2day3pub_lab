@@ -25,4 +25,6 @@ class Pub:
         else:
             self.cash += drink.price
             customer.wallet -= drink.price
+            customer.drunkenness += drink.alcohol_level
+            
 
