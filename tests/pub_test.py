@@ -20,9 +20,10 @@ class TestPub(unittest.TestCase):
     def test_pub_has_drinks(self):
         self.assertEqual(2, len(self.pub.drinks))
     
-    def test_drink_has_name(self):
+    def test_pub_drink_has_name(self):
         self.assertEqual("Beer", self.pub.drinks[0].name)
         self.assertEqual("Wine", self.pub.drinks[1].name)
 
-    def test_drink_has_price(self):
-        pass
+    def test_pub_drink_has_price(self):
+        self.assertEqual(5, self.pub.drinks[0].price)
+        self.assertEqual(4, self.pub.drinks[1].price)
