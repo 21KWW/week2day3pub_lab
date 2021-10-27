@@ -7,8 +7,8 @@ from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     def setUp(self):
-        drink1 = Drink("Beer", 5)
-        drink2 = Drink("Wine", 4)
+        drink1 = Drink("Beer", 5, 5)
+        drink2 = Drink("Wine", 4, 11)
         drinks = [drink1, drink2]
 
         customer1 = Customer("Andrew", 10, 29)
@@ -58,3 +58,7 @@ class TestPub(unittest.TestCase):
         self.pub.customer_buys_drink("Charlie", "Beer")
         self.assertEqual(100, self.pub.cash)
         self.assertEqual(30, self.pub.customers[2].wallet)
+
+    # def test_pub_drunkenness_level(self):
+    #     self.pub.customer_buys_drink("Andrew", "Beer")
+    #     self.assertEqual(5, self.pub.customers[0].drunkenness)

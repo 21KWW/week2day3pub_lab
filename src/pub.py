@@ -21,7 +21,7 @@ class Pub:
         customer = self.find_customer_by_name(customer_name)
         drink = self.find_drink_by_name(drink_name)
         if customer.age < 18:
-            return "Too young to drink"
+            print("Too young to drink")
         else:
             self.cash += drink.price
             customer.wallet -= drink.price
