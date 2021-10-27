@@ -3,4 +3,3 @@ class Pub:
         self.name = init_name
         self.cash = init_cash
 
-    
